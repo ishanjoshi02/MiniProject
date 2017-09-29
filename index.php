@@ -13,11 +13,11 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-        <script src="Scripts/index.js"></script>  
     </head>
     <body>
         <?php 
-            include("Php/session.php");
+            // include("Php/session.php");
+            include("Php/retrieve_songs.php");
         ?>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -29,10 +29,16 @@
                         <span class="icon-bar"></span>
                     </button>
                     
-                    <a class="navbar-brand" href="index.html">GaanaCloud</a>
+                    <a class="navbar-brand" href="index.php">GaanaCloud</a>
                 </div>
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
+                    <li>
+                            <a href="upload.php">
+                                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                                     &nbsp;Upload
+                            </a>
+                    </li>
                         <li class="">
                             <a href="#">
                             </a>
@@ -63,5 +69,23 @@
                 </div>
             </div>
         </nav>
+
+        <div class="container-fluid">
+
+            <?php
+            
+                foreach($results_array as $value) {
+
+                    if ($value !== "." || $value !== "..") {
+
+                        echo $value . "<br>";
+
+                    }
+
+                } 
+            ?>
+
+        </div>
+
     </body>
 </html>
