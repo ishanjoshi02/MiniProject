@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>
             Home
@@ -16,109 +15,53 @@
         crossorigin="anonymous"></script>
         <script src="Scripts/index.js"></script>  
     </head>
-
     <body>
-
         <?php 
-
-            session_start();
-
-            if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
-
-                echo "Fuck Off";    
-
-            } else {
-
-                header(
-                    "Location: login.php"
-                );
-
-            }
-
+            include("Php/session.php");
         ?>
-
         <nav class="navbar navbar-default">
-
             <div class="container-fluid">
-
                 <div class="navbar-header">
-
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
                      
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    
                     </button>
                     
                     <a class="navbar-brand" href="index.html">GaanaCloud</a>
-
                 </div>
-
                 <div class="collapse navbar-collapse" id="topNavBar">
-
                     <ul class="nav navbar-nav">
-
                         <li class="">
-
                             <a href="#">
-
-
-
                             </a>
-
                         </li>
-
                     </ul>
-
-                    <form class="navbar-form navbar-left" role="search" method="get" action="">
-                
+                    <form class="navbar-form navbar-left" role="search" method="get" action="" style="margin-left: 12.5%;">
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" placeholder="Search" style="-webkit-text-fill-color: #263238;width: 250px; ">
                         </div>
-                
-                        <button id="search" type="submit" class="btn btn-default">Search</button>
-                
+                        <button id="search" type="submit" class="btn btn-default" style="background-color: #fff;">Search</button>
                     </form>
-
                     <ul class="nav navbar-nav navbar-right">
-        
                         <li class="">
-        
-                            <a href="profile.php">
-                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                &nbsp;Your Profile
+                            <a href="signup.php">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                     &nbsp;Sign Up
                             </a>
         
                         </li>
         
                         <li>
-        
-                            <a href="#">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                                     &nbsp;Logout
-        
-                            </a>
-
-                        </li>
-        
+                            <a href="login.php">
+                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
+                                     &nbsp;Login
+                            </a>                            
+                        </li>       
                     </ul>
-
                 </div>
-
             </div>
-
         </nav>
-
-        <div class="container-fluid">
-
-            <div id="body" class="row">
-
-
-
-            </div>
-        </div>
-
     </body>
-
 </html>
