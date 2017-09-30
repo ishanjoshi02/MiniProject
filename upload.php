@@ -17,7 +17,7 @@
 
 <body>
         <?php
-        // include_once("Php/session.php");
+        include_once("Php/session.php");
         include_once("Php/config.php");
         include("Php/extensions.php");
         $target_dir = dirname(__FILE__) . "/music/" . $_SESSION['login_user'];

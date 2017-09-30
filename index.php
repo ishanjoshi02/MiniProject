@@ -16,7 +16,7 @@
     </head>
     <body>
         <?php 
-            // include("Php/session.php");
+            include("Php/includes/session.php");
             include("Php/retrieve_songs.php");
         ?>
         <nav class="navbar navbar-default">
@@ -74,15 +74,26 @@
 
             <?php
             
-                foreach($results_array as $value) {
+                if (!$empty_list) {
 
-                    if ($value !== "." || $value !== "..") {
-
-                        echo $value . "<br>";
-
+                    foreach($results_array as $value) {
+                        
+                        if ($value !== "." || $value !== "..") {
+                        
+                            echo $value . "<br>";
+                        
+                        }
+                        
                     }
 
-                } 
+                } else {
+
+                    echo "<h1>No songs in your list.".
+                            "<br>Please add Songs</h1><br>".
+                            "<a href=\"upload.php\">Upload Songs</a>";
+
+
+                }
             ?>
 
         </div>

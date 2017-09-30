@@ -4,6 +4,8 @@
 
     $results_array = array();
 
+    $empty_list = FALSE;
+
     if (is_dir($directory)) {
 
         if ($handle = opendir($directory)) {
@@ -20,7 +22,7 @@
 
     } else {
         
-        header("Location: upload.php");
+        $empty_list = TRUE;
         
     }
 
