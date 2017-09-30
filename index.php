@@ -6,9 +6,9 @@
         </title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://bootswatch.com/paper/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
@@ -33,12 +33,6 @@
                 </div>
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
-                    <li>
-                            <a href="upload.html">
-                                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                     &nbsp;Upload
-                            </a>
-                    </li>
                         <li class="">
                             <a href="#">
                             </a>
@@ -48,9 +42,17 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" placeholder="Search" style="-webkit-text-fill-color: #263238;width: 250px; ">
                         </div>
-                        <button id="search" type="submit" class="btn btn-default" style="background-color: #fff;">Search</button>
+                        <button id="search" type="submit" class="btn btn-default">Search</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
+
+                    <li>
+                            <a href="upload.html">
+                                <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+                                     &nbsp;Upload
+                            </a>
+                    </li>
+
                         <li class="">
                             <a href="signup.php">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
