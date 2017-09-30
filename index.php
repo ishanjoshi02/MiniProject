@@ -13,6 +13,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="Stylesheets/styleIndex.css">
     </head>
     <body>
         <?php 
@@ -40,7 +41,7 @@
                     </ul>
                     <form class="navbar-form navbar-left" role="search" method="get" action="" style="margin-left: 12.5%;">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="q" placeholder="Search" style="-webkit-text-fill-color: #263238;width: 250px; ">
+                            <input type="text" class="form-control" name="q" placeholder="Search" style="width: 250px; ">
                         </div>
                         <button id="search" type="submit" class="btn btn-default">Search</button>
                     </form>
