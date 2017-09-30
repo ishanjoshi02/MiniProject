@@ -34,7 +34,7 @@
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
                     <li>
-                            <a href="upload.php">
+                            <a href="upload.html">
                                 <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
                                      &nbsp;Upload
                             </a>
@@ -78,11 +78,7 @@
 
                     foreach($results_array as $value) {
                         
-                        if ($value !== "." || $value !== "..") {
-                        
-                            echo $value . "<br>";
-                        
-                        }
+                        echo $value . "<br>";
                         
                     }
 
@@ -90,7 +86,7 @@
 
                     echo "<h1>No songs in your list.".
                             "<br>Please add Songs</h1><br>".
-                            "<a href=\"upload.php\">Upload Songs</a>";
+                            "<a href=\"upload.html\">Upload Songs</a>";
 
 
                 }

@@ -1,6 +1,6 @@
 <?php
 
-    $directory = "music/" . $_SESSION['login_user'];
+    $directory = dirname(__FILE__) . "/music/";
 
     $results_array = array();
 
