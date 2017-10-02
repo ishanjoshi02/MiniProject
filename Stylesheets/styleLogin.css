@@ -52,6 +52,7 @@
 
     margin-left: 10px;
     margin-top: 20px;
+    background-color: #333; 
 }
 
 .navbar-brand {
@@ -80,6 +81,7 @@
 }
 
 *::placeholder {
+    
     color: #dadada !important;
 }
 

@@ -52,6 +52,7 @@
 
     margin-left: 10px;
     margin-top: 20px;
+    background-color: #333; 
 }
 
 .navbar-brand {
@@ -70,4 +71,23 @@
   outline-color: rgba(255, 255, 255, 0.5);
   /*outline-offset: 50px;*/
   text-shadow: 6px 6px 6px #afafaf; 
+}
+
+.signup-box {
+      
+    color: #fff;
+    background: #fc4a1a;  /* fallback for old browsers */
+    background: linear-gradient(to bottom, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+*::placeholder {
+    
+    color: #dadada !important;
+}
+
+body {
+    
+    background-image: url("Images/signup.jpg");
+    background-size: 100% 180%;
+    background-repeat: no-repeat !important;
 }
