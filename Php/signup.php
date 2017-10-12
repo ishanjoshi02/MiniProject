@@ -27,7 +27,7 @@
                 
                     session_start();
                     $_SESSION['login_user'] = $username;
-                
+                    $_SESSION['login_email'] = $email;
                     header("Location: /index.php");
                 
                 } 

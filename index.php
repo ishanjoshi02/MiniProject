@@ -32,6 +32,7 @@
                     
                     <a class="navbar-brand" href="index.php">GaanaCloud</a>
                 </div>
+
                 <div class="collapse navbar-collapse" id="topNavBar">
                     <ul class="nav navbar-nav">
                         <li class="">
@@ -39,6 +40,7 @@
                             </a>
                         </li>
                     </ul>
+
                     <form class="navbar-form navbar-left" role="search" method="get" action="" style="margin-left: 12.5%;">
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" placeholder="Search" style="width: 250px; ">
@@ -46,7 +48,7 @@
                         <button id="search" type="submit" class="btn btn-default">Search</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
-
+                    
                     <li>
                             <a href="upload.html">
                                 <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
@@ -54,20 +56,13 @@
                             </a>
                     </li>
 
-                        <li class="">
-                            <a href="signup.php">
-                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                     &nbsp;Sign Up
+                    <li>
+                            <a href="Php/logout.php">
+                                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                                     &nbsp;Logout
                             </a>
-        
-                        </li>
-        
-                        <li>
-                            <a href="login.php">
-                                <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                                     &nbsp;Login
-                            </a>                            
-                        </li>       
+                    </li>
+                    
                     </ul>
                 </div>
             </div>

@@ -2,6 +2,7 @@
     
         include("includes/config.php");
 
+        session_start();
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $email = mysqli_real_escape_string($db, $_POST["inputEmail"]);
@@ -10,14 +11,14 @@
 
             $result = mysqli_query($db, $sql_query) or die ("Error occured while processing query " . mysql_errno());
             $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-            $active = $row['active'];
+          //  $active = $row['active'];
 
             if (mysqli_num_rows($result) == 1) {
 
-               session_start();
-                $_SESSION['login_user'] = $username;
-
-                header("location: /index.php");
+                // $_SESSION['login_user'] = $username;
+                $_SESSION['login_email'] = $email;
+                echo $_SESSION['login_user'];
+               header("location: /MiniProject/index.php");
 
             } else {
 
