@@ -14,11 +14,20 @@
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="Stylesheets/styleIndex.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.7.0/jsmediatags.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type='text/javascript'>
+            <?php
+                include("Php/includes/session.php");
+                include("Php/retrieve_songs.php");
+                $js_array = json_encode($results_array);
+                echo "var files = ".$js_array.";\n";
+            ?>
+        </script>
+        <script src="Javascript/index.js"></script>
     </head>
     <body>
         <?php 
-            include("Php/includes/session.php");
-            include("Php/retrieve_songs.php");
         ?>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
@@ -68,28 +77,9 @@
             </div>
         </nav>
 
-        <div class="container-fluid">
+        <div class="container-fluid" id="container">
 
-            <?php
             
-                if (!$empty_list) {
-
-                    foreach($results_array as $value) {
-                        
-                        echo $value . "<br>";
-                        
-                    }
-
-                } else {
-
-                    echo "<h1>No songs in your list.".
-                            "<br>Please add Songs</h1><br>".
-                            "<a href=\"upload.html\">Upload Songs</a>";
-
-
-                }
-            ?>
-
         </div>
 
     </body>

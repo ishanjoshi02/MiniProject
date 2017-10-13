@@ -12,7 +12,9 @@
 
             while(($file = readdir($handle)) != FALSE) {
 
-                $results_array[] = $file;
+                if ($file !== '.' && $file !== '..') {
+                    $results_array[] = "/MiniProject/Php" . "/music/" . $file;
+                }
 
             }
 

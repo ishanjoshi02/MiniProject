@@ -1,8 +1,10 @@
 <?php 
     
         include("includes/config.php");
-
         session_start();
+        if (isset($_SESSION["login_email"])) {
+            header("location: /MiniProject/index.php");
+        }
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $email = mysqli_real_escape_string($db, $_POST["inputEmail"]);
@@ -15,9 +17,7 @@
 
             if (mysqli_num_rows($result) == 1) {
 
-                // $_SESSION['login_user'] = $username;
-                $_SESSION['login_email'] = $email;
-                echo $_SESSION['login_user'];
+               $_SESSION['login_email'] = $email;
                header("location: /MiniProject/index.php");
 
             } else {
