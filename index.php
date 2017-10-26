@@ -88,7 +88,7 @@
 
     <footer style="position: fixed; height: 55px; width: 100%; background-color: white-space; bottom: 0px; right: 0px; left: 0px; margin-bottom: 0px;">
 
-        <div class="panel panel-default" style="margin: 0;background-color: white; text-align: center;">
+        <div class="panel panel-default" style="margin: 0;background-color: orange; text-align: center;">
             
 
             <div style="float: left; width: 25%;">

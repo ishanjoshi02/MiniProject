@@ -24,10 +24,15 @@ function Player(playlist) {
 
     }
 
-    this.playSong = function() {
+    this.playSong = function(songURL) {
 
-        
-
+        this.currentSongIndex = this.playlist.indexOf(songURL)
+        this.audio = new Audio(songURL)
+        this.audio.play()
+        this.playing = true
+        this.audio.onended = function() {
+            this.next()
+        }
     }
 
     this.next = function() {
@@ -41,9 +46,7 @@ function Player(playlist) {
 
         }
 
-        this.audio = new Audio(this.playlist[this.currentSongIndex])
-        this.audio.play()
-        this.playing = true
+        this.playSong(this.playlist[this.currentSongIndex])
 
     }
 
@@ -55,9 +58,7 @@ function Player(playlist) {
             this.currentSongIndex = 0    
         }
         
-        this.audio = new Audio(this.playlist[this.currentSongIndex])
-        this.audio.play()
-        this.playing = true
+        this.playSong(this.playlist[this.currentSongIndex])
         
     }
 

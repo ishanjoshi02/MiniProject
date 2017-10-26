@@ -1,13 +1,15 @@
 var jsmediatags = window.jsmediatags
 var player = new Player(files)
 player.initPlayer()
+var icon, heading
 
 $(document).ready(function() {
 
     var container = document.getElementById("container")
     var playPauseButton = document.getElementById("play_pause_button")
-    var icon = document.getElementById("play_pause_icon")
-    var heading = document.getElementById('song_title')
+
+    icon = document.getElementById("play_pause_icon")
+    heading = document.getElementById('song_title')
     heading.innerText = player.currentSong()
 
     playPauseButton.onclick = function() {
@@ -44,4 +46,17 @@ $(document).ready(function() {
 
     }
 
+    files.forEach(function(element) {
+        var para = document.createElement("p")
+        para.onclick = function() {
+            player.audio.pause()
+            player.playSong(element)
+            heading.innerText = player.currentSong()
+            icon.className = "glyphicon glyphicon-pause"
+        }
+        para.innerText = element.replace("/MiniProject/Php/music/", "").replace(".mp3", "")
+        container.appendChild(para)
+    }, this);
+
 })
+
