@@ -27,7 +27,7 @@
 
         if (isset($_FILES["fileToUpload"])) {
 
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $song_title)) {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "/" + $song_title)) {
 
                     # Adding Entering of song to SongTable'
                 $song_release_date = $_POST["inputReleaseDate"];
@@ -46,15 +46,10 @@
                 "(SongTitle, SongReleaseDate, SongAlbum, SongGenre, FilePath) ".
                 "values('$song_title', '$song_release_date', '$song_album', '$song_genre',".
                 ", '$file_path')";
-                    
-                $result = mysqli_query($db, $sql_query) or die("ERROR " + mysql_errno());
 
-                if ($result) {
+                $result = mysqli_query($db, $sql_query);
 
-                    header("Location: /index.php");
-
-                } 
-
+                header("Location: /MiniProject/index.php");
 
             } else {
 
