@@ -1,30 +1,47 @@
 var jsmediatags = window.jsmediatags
+var player = new Player(files)
+player.initPlayer()
 
 $(document).ready(function() {
+
     var container = document.getElementById("container")
+    var playPauseButton = document.getElementById("play_pause_button")
+    var icon = document.getElementById("play_pause_icon")
+    var heading = document.getElementById('song_title')
+    heading.innerText = player.currentSong()
 
+    playPauseButton.onclick = function() {
 
-    files.forEach(function(element) {
-        var para = document.createElement('p')
-        var temp = element.split('/MiniProject/Php/music/').join('')
-        para.innerText = temp
-        container.appendChild(para)
-        container.appendChild(getAudio(element))
-        container.appendChild(document.createElement('br'))
-    }, this);
+        if (player.isPlaying()) {
+
+            icon.className = "glyphicon glyphicon-play"
+            player.pausePlay()
+
+        } else {
+
+            icon.className = "glyphicon glyphicon-pause"
+            player.pausePlay()
+
+        }
+
+    }
+
+    next = document.getElementById("nextButton")
+    next.onclick = function() {
+
+        player.next()
+        heading.innerText = player.currentSong()
+        icon.className = "glyphicon glyphicon-pause"
+
+    }
+
+    previousButton = document.getElementById('prevButton')
+    previousButton.onclick = function() {
+
+        player.previous()
+        heading.innerText = player.currentSong()
+        icon.className = "glyphicon glyphicon-pause"
+
+    }
 
 })
-
-
-function getAudio(file) {
-
-    var audio = document.createElement('audio')
-    var source = document.createElement('source')
-    source.src = file 
-    source.type = 'audio/mpeg'
-    audio.appendChild(source)
-    audio.controls = true
-    // audio.loop = true
-    return audio
-}
-

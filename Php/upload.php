@@ -27,7 +27,7 @@
 
         if (isset($_FILES["fileToUpload"])) {
 
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "/" + $song_title)) {
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir + $song_title + ".mp3")) {
 
                     # Adding Entering of song to SongTable'
                 $song_release_date = $_POST["inputReleaseDate"];

@@ -24,6 +24,7 @@
                 echo "var files = ".$js_array.";\n";
             ?>
         </script>
+        <script src="Javascript/Player.js"></script>
         <script src="Javascript/index.js"></script>
     </head>
     <body>
@@ -80,7 +81,37 @@
         <div class="container-fluid" id="container">
 
             
+            
         </div>
 
     </body>
+
+    <footer style="position: fixed; height: 55px; width: 100%; background-color: white-space; bottom: 0px; right: 0px; left: 0px; margin-bottom: 0px;">
+
+        <div class="panel panel-default" style="margin: 0;background-color: white; text-align: center;">
+            
+
+            <div style="float: left; width: 25%;">
+                <button id="prevButton">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+            </div>
+
+            <div style="float: left; width: 50%;">
+                <button id="play_pause_button">
+                    <span id="play_pause_icon" class="glyphicon glyphicon-play"></span>
+                </button>
+            </div>
+
+            <div style="float: right; width: 25%;">
+                <button id="nextButton">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+        
+                <p id="song_title"></p>
+        </div>
+
+    </footer>
+
 </html>
