@@ -1,13 +1,7 @@
 function Player(playlist) {
 
     this.currentSongIndex = 0
-    if (playlist) {
-        this.playlist = playlist
-    } else {
-
-        this.playlist = getLibrary()
-
-    }
+    this.playlist = playlist
 
     this.audio
 
@@ -28,11 +22,18 @@ function Player(playlist) {
 
         this.currentSongIndex = this.playlist.indexOf(songURL)
         this.audio = new Audio(songURL)
+        this.audio.load()
+
+        this.audio.addEventListener('ended', function() {
+            this.next()
+        })
+
+
         this.audio.play()
         this.playing = true
-        this.audio.onended = function() {
-            this.next()
-        }
+
+        
+        console.log(this.audio)
     }
 
     this.next = function() {
@@ -64,19 +65,19 @@ function Player(playlist) {
 
     this.initPlayer = function() {
 
-        this.audio = new Audio(this.playlist[this.currentSongIndex])
+        this.playSong(this.playlist[this.currentSongIndex])
+        this.pausePlay()
 
     }
 
     this.currentSong = function() {
 
-        var returnString = this.playlist[this.currentSongIndex]
 
         return this.playlist[this.currentSongIndex].replace("/MiniProject/Php/music/", "").replace(".mp3", "")
         
     }
 
-    this.pausePlay = function(pauseButton) {
+    this.pausePlay = function() {
 
         if (!this.playing) {
 
