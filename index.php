@@ -20,6 +20,7 @@
             <?php
                 include("Php/includes/session.php");
                 include("Php/retrieve_songs.php");
+                // include("Php/search_songs.php");
                 $js_array = json_encode($results_array);
                 echo "var files = ".$js_array.";\n";
             ?>
@@ -51,12 +52,12 @@
                         </li>
                     </ul>
 
-                    <form class="navbar-form navbar-left" role="search" method="get" action="" style="margin-left: 12.5%;">
+                    <form action="Php/search_songs.php" method="post" class="navbar-form navbar-left" role="search" style="margin-left: 12.5%;">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="q" placeholder="Search" style="width: 250px; ">
+                            <input type="text" class="form-control" name="search" placeholder="Search" style="width: 250px;" required>
                         </div>
 
-                        <button id="search" type="submit" class="btn btn-warning">Search</button>
+                        <button id="search" type="submit" name="search" class="btn btn-warning">Search</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                     
@@ -80,14 +81,12 @@
         </nav>
 
         <div class="container-fluid" id="container">
-
-            
             
         </div>
 
     </body>
 
-    <footer style="margin-left: 40px;position: fixed; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 25px;" class="footer-player">
+    <footer style="margin-left: 40px;position: fixed; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
     
             <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center;">
                 
