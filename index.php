@@ -55,7 +55,8 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" placeholder="Search" style="width: 250px; ">
                         </div>
-                        <button id="search" type="submit" class="btn btn-default">Search</button>
+
+                        <button id="search" type="submit" class="btn btn-warning">Search</button>
                     </form>
                     <ul class="nav navbar-nav navbar-right">
                     
@@ -86,32 +87,32 @@
 
     </body>
 
-    <footer style="position: fixed; height: 55px; width: 100%; background-color: white-space; bottom: 0px; right: 0px; left: 0px; margin-bottom: 0px;">
-
-        <div class="panel panel-default" style="margin: 0;background-color: orange; text-align: center;">
+    <footer style="margin-left: 40px;position: fixed; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 25px;" class="footer-player">
+    
+            <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center;">
+                
+    
+                <div style="float: left; width: 30%;">
+                    <button id="prevButton" class="btn">
+                        <span class="glyphicon glyphicon-backward"></span>
+                    </button>
+                </div>
+    
+                <div style="float: left; width: 40%; margin-top: 2%;">
+                    <button id="play_pause_button" class="btn">
+                        <span id="play_pause_icon" class="glyphicon glyphicon-play"></span>
+                    </button>
+                </div>
+    
+                <div style="float: right; width: 30%;">
+                    <button id="nextButton" class="btn">
+                        <span class="glyphicon glyphicon-forward"></span>
+                    </button>
+                </div>
             
-
-            <div style="float: left; width: 25%;">
-                <button id="prevButton">
-                    <span class="glyphicon glyphicon-backward"></span>
-                </button>
+                    <p id="song_title"></p>
             </div>
-
-            <div style="float: left; width: 50%;">
-                <button id="play_pause_button">
-                    <span id="play_pause_icon" class="glyphicon glyphicon-play"></span>
-                </button>
-            </div>
-
-            <div style="float: right; width: 25%;">
-                <button id="nextButton">
-                    <span class="glyphicon glyphicon-forward"></span>
-                </button>
-            </div>
-        
-                <p id="song_title"></p>
-        </div>
-
-    </footer>
+    
+        </footer>
 
 </html>
