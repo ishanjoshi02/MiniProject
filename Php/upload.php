@@ -27,13 +27,16 @@
 
         if (isset($_FILES["fileToUpload"])) {
 
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_dir + $song_title + ".mp3")) {
+
+            $song_title = $_POST["inputSong"];
+            $file_path = $target_dir . $song_title;
+
+            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $file_path)) {
 
                     # Adding Entering of song to SongTable'
                 $song_release_date = $_POST["inputReleaseDate"];
                 $song_album = $_POST["inputAlbum"];
                 $song_genre = $_POST["inputGenre"];
-                $file_path = $target_dir . $song_title;
                 $user_email = $_SESSION["login_email"];
                 $sql_query = "Select UserID From UserTable where UserEmail = '$user_email'";
 
@@ -43,11 +46,11 @@
                 $son_artist = $var["UserID"];
 
                 $sql_query = "Insert into SongTable ".
-                "(SongTitle, SongReleaseDate, SongAlbum, SongGenre, FilePath) ".
+                "(SongTitle, SongReleaseDate, SongAlbum, SongGenre, FilePath, SongArtist) ".
                 "values('$song_title', '$song_release_date', '$song_album', '$song_genre',".
-                ", '$file_path')";
+                "'$file_path', '$son_artist')";
 
-                $result = mysqli_query($db, $sql_query);
+                $result = mysqli_query($db, $sql_query) or die("Could not Upload Song " . mysqli_error($db));
 
                 header("Location: /MiniProject/index.php");
 

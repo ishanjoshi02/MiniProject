@@ -69,8 +69,8 @@ function play_or_pause() {
         
     } else {
         
-            icon.className = "glyphicon glyphicon-pause"
-            player.pausePlay()
+        icon.className = "glyphicon glyphicon-pause"
+        player.pausePlay()
         
     }
     
