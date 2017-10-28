@@ -7,19 +7,10 @@ function Player(playlist) {
 
     this.playing = false
 
+    this.playSong = function(song) {
 
-    this.getLibrary = function() {
-
-        var library = []
-
-        return library
-
-    }
-
-    this.playSong = function(songURL) {
-
-        this.currentSongIndex = this.playlist.indexOf(songURL)
-        this.audio = new Audio(songURL)
+        this.currentSongIndex = this.playlist.indexOf(song)
+        this.audio = new Audio("Php/" + song.FilePath)
         this.audio.load()
 
         this.audio.addEventListener('ended', function() {
@@ -69,7 +60,8 @@ function Player(playlist) {
     this.currentSong = function() {
 
 
-        return this.playlist[this.currentSongIndex].replace("Php/music/", "").replace(".mp3", "")
+        return this.playlist[this.currentSongIndex].SongTitle
+        
         
     }
 

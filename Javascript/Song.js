@@ -1,5 +1,6 @@
 function Song(Song) {
 
+    this.SongID = Song['SongID']
     this.SongTitle = Song['SongTitle'];
     this.SongReleaseDate = Song['SongReleaseDate'];
     this.SongAlbum = Song['SongAlbum'];

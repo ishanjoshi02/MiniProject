@@ -24,18 +24,13 @@ $(document).ready(function() {
 
     files = fileslist
     
-    player = new Player(files)
+    player = new Player(songList)
 
     files.sort()
     player.initPlayer()
 
     var container = document.getElementById("container")
-    var playPauseButton = document.getElementById("play_pause_button");
-    likeButton = document.getElementById("like_button");
-
-    likeButton.onclick = function() {
-        likeSong();
-    }
+    var playPauseButton = document.getElementById("play_pause_button")
 
     icon = document.getElementById("play_pause_icon")
     heading = document.getElementById('song_title')
@@ -101,9 +96,10 @@ $(document).ready(function() {
             row.onclick = function() {
 
                 player.audio.pause()
-                player.playSong(element.getFilePath())
+                player.playSong(element)
                 heading.innerText = player.currentSong()
                 icon.className = "glyphicon glyphicon-pause"
+                likeHighlight(element)
 
             }
 
@@ -158,21 +154,49 @@ function playPreviousSong() {
     player.previous()
     heading.innerText = player.currentSong()
     icon.className = "glyphicon glyphicon-pause"
+    likeHighlight(player.currentSong)
     
 }
 
-function likeSong() {
-    // var i=1;
-    if(likeButton.className=="glyphicon glyphicon-heart") {
-        likeButton.className = "glyphicon glyphicon-heart-empty";
-        // i--;
-    }
-    else {
-        likeButton.className = "glyphicon glyphicon-heart"
-        // i++;
-    }
-    // likeButton.className = "glyphicon glyphicon-heart";
-    
+function likeHighlight(element) {
+        
+        var likeSpan = document.getElementById('like_span')
 
-    
+        if (element.Liked) {
+            likeSpan.className = "glyphicon glyphicon-heart"
+        } else {
+            likeSpan.className = "glyphicon glyphicon-heart-empty"
+        }
+
+        var likeButton = document.getElementById('like_button')
+        likeButton.onclick = function() {
+
+            element.Liked = !element.Liked
+            if (element.Liked) {
+                likeSpan.className = "glyphicon glyphicon-heart"
+            } else {
+                likeSpan.className = "glyphicon glyphicon-heart-empty"
+            }
+
+
+            var form = $('<form></form>')
+            form.attr("method", "post")
+            form.attr("action", "Php/like_song.php")
+
+            var field = $('<input></input>')
+            field.attr("type", "hidden")
+            field.attr("name", "Liked")
+            field.attr("value", element.Liked.toString())
+
+            form.append(field)
+            var field = $('<input></input>')
+            field.attr("type", "hidden")
+            field.attr("name", "SongID")
+            field.attr("value", element.SongID)
+
+            form.append(field)
+
+            $(document.body).append(form)
+            form.submit()
+        }
 }
