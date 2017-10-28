@@ -42,7 +42,7 @@ $(document).ready(function() {
             heading.innerText = player.currentSong()
             icon.className = "glyphicon glyphicon-pause"
         }
-        para.innerText = element.replace("/MiniProject/Php/music/", "").replace(".mp3", "")
+        para.innerText = element.replace("Php/music/", "").replace(".mp3", "")
         container.appendChild(para)
     }, this);
 

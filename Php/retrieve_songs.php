@@ -1,32 +1,24 @@
 <?php
 
-    $directory = dirname(__FILE__) . "/music/";
+    include_once("includes/config.php");
+    $results_array = [];
 
-    $results_array = array();
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $empty_list = FALSE;
-
-    if (is_dir($directory)) {
-
-        if ($handle = opendir($directory)) {
-
-            while(($file = readdir($handle)) != FALSE) {
-
-                if ($file !== '.' && $file !== '..') {
-                    $results_array[] = "/MiniProject/Php" . "/music/" . $file;
-                    // $results_array[] = 'https:localhost/MiniProject/Php' . "/music/" . $file;
-                }
-
-            }
-
-            closedir($handle);
-
-        }
+        $sql_query = "SELECT FilePath from SongTable where SongTitle like '%". $_POST['song_name'] . "%'";
 
     } else {
-        
-        $empty_list = TRUE;
-        
+        $sql_query = "SELECT FilePath from SongTable";
+    }
+    $result = mysqli_query($db, $sql_query) or die("ABC");
+    
+    if ($result->num_rows > 0) {
+
+        while ($row = mysqli_fetch_array($result)) {
+            $results_array[] = "Php/" . $row['FilePath'];
+        }
+
     }
 
 ?>

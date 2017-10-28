@@ -73,7 +73,7 @@ function Player(playlist) {
     this.currentSong = function() {
 
 
-        return this.playlist[this.currentSongIndex].replace("/MiniProject/Php/music/", "").replace(".mp3", "")
+        return this.playlist[this.currentSongIndex].replace("Php/music/", "").replace(".mp3", "")
         
     }
 

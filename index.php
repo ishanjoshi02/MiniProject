@@ -16,8 +16,10 @@
         <link rel="stylesheet" type="text/css" href="Stylesheets/styleIndex.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jsmediatags/3.7.0/jsmediatags.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        
         <script type='text/javascript'>
             <?php
+
                 include("Php/includes/session.php");
                 include("Php/retrieve_songs.php");
                 // include("Php/search_songs.php");
@@ -29,8 +31,6 @@
         <script src="Javascript/index.js"></script>
     </head>
     <body>
-        <?php 
-        ?>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -52,9 +52,9 @@
                         </li>
                     </ul>
 
-                    <form action="Php/search_songs.php" method="post" class="navbar-form navbar-left" role="search" style="margin-left: 12.5%;">
+                    <form action="" method="POST" class="navbar-form navbar-left" role="search" style="margin-left: 12.5%;">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="search" placeholder="Search" style="width: 250px;" required>
+                            <input type="text" class="form-control" name="song_name" placeholder="Search" style="width: 250px;" required>
                         </div>
 
                         <button id="search" type="submit" name="search" class="btn btn-warning">Search</button>
