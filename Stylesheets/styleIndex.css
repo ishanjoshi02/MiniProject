@@ -52,7 +52,7 @@ ul {
 .footer-player {
         /* border: 1px solid #333; */
     border-radius: 50px;
-    
+    background: linear-gradient(to bottom, #f7b733, #fc4a1a);  
 }
     
 #song_title {

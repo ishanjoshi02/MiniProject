@@ -85,9 +85,9 @@
 
     </body>
 
-    <footer style=" align: center; margin-left: 40px;position: absolute; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
+    <footer style=" align: center; margin-left: 40px;position: absolute; height: 55px; width: 50%; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
     
-            <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center; height: 80px;">
+            <div class="panel panel-default footer-player" style="margin: 0; text-align: center; height: 80px;">
                 
     
                 <div style="float: left; width: 25%;">
