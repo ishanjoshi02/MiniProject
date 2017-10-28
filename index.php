@@ -23,8 +23,6 @@
                 include("Php/retrieve_songs.php");
                 $js_array = json_encode($songs_array);
                 echo "var songList = ".$js_array.";\n";
-                $js_array = json_encode($songs_array);
-                echo "var csongList = ".$js_array.";\n";
             ?>
         </script>
         <script src="Javascript/Player.js"></script>
