@@ -22,10 +22,10 @@
 
         while ($row = mysqli_fetch_array($result)) {
 
-            $sql = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
-            $result = mysqli_query($db, $sql);
+            $sql2 = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
+            $result2 = mysqli_query($db, $sql2);
 
-            $row['SongArtist'] = mysqli_fetch_assoc($result)['UserName'];
+            $row['SongArtist'] = mysqli_fetch_assoc($result2)['UserName'];
             $results_array[] = "Php/" . $row['FilePath'];
             $songs_array[] = $row;
         }
