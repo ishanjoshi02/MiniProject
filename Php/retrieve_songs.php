@@ -74,14 +74,16 @@
                 $sql_query = "SELECT SongID from LibraryTable where UserID = '" . $userID . "'";
                 $bool = mysqli_query($db, $sql_query);
                 
+
+                $sql2 = "SELECT UserName from UserTable where UserID = " . $row['SongArtist'] . "";
+                $result2 = mysqli_query($db, $sql2);        
+                $row['SongArtist'] = mysqli_fetch_assoc($result2)['UserName'];
+
                 if ($bool->num_rows > 0) {
 
                     while ($res1 = mysqli_fetch_array($bool)) {
 
                         if ($songID == $res1['SongID']) {
-                        $sql2 = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
-                        $result2 = mysqli_query($db, $sql2);        
-                        $row['SongArtist'] = mysqli_fetch_assoc($result2)['UserName'];
                         $row['Added'] = true;
 
                         }
@@ -92,9 +94,8 @@
                 }
 
                 $row['Liked'] = false;
-                $sql2 = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
-                $result2 = mysqli_query($db, $sql2);        
-                $row['SongArtist'] = mysqli_fetch_assoc($result2)['UserName'];
+                $sql2 = "SELECT UserName from UserTable where UserID = " . $row['SongArtist'] . "";
+                // $row['SongArtist'] = mysqli_fetch_assoc(mysqli_query($db, $sql2))['UserName'];
                 $songs_array[] = $row;
             }
 
