@@ -36,6 +36,8 @@ $(document).ready(function() {
     heading = document.getElementById('song_title')
     heading.innerText = player.currentSong()
 
+    likeHighlight(player.getCurrentSongObject())
+
     playPauseButton.onclick = function() { 
 
         play_or_pause()
@@ -146,6 +148,7 @@ function playNextSong() {
     player.next()
     heading.innerText = player.currentSong()
     icon.className = "glyphicon glyphicon-pause"
+    likeHighlight(player.currentSong)
 
 }
 

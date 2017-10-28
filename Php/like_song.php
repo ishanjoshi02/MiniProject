@@ -19,9 +19,9 @@
         $sql2 = "SELECT UserID from UserTable where UserEmail = '" . $_SESSION['login_email'] . "'";
         $result2 = mysqli_query($db, $sql2);
         $userID = mysqli_fetch_assoc($result2)['UserID'];
-        $songID = "<script>document.writeln(song.SongID)</script>";
-
-        $insert_query = "DELETE from LikesTable where UserID = '" . $userID . "' and SongID = '" . $songID ."'"; 
+        $songID = $_POST['SongID'];
+        
+        $insert_query = "DELETE from LikesTable where UserID = " . $userID . " and SongID = " . $songID .""; 
         $result = mysqli_query($db, $insert_query);
 
     }
@@ -30,6 +30,8 @@
 
         header("Location: /MiniProject/index.php");
 
+    } else {
+        echo "Error";
     }
     
 ?>

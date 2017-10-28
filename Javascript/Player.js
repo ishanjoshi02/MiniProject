@@ -50,6 +50,10 @@ function Player(playlist) {
         
     }
 
+    this.getCurrentSongObject = function() {
+        return this.playlist[this.currentSongIndex]
+    }
+
     this.initPlayer = function() {
 
         this.playSong(this.playlist[this.currentSongIndex])
@@ -64,7 +68,13 @@ function Player(playlist) {
         
         
     }
+    this.currentSongLiked = function() {
 
+
+        return this.playlist[this.currentSongIndex].Liked
+        
+        
+    }
     this.pausePlay = function() {
 
         if (!this.playing) {
