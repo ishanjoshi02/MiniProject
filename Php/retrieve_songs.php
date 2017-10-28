@@ -15,13 +15,15 @@
     } else {
         $sql_query = "SELECT * from SongTable";
 
-        $sql2 = "SELECT UserID from UserTable where UserEmail = '" . $_SESSION['login_email'] . "'";
-        $result2 = mysqli_query($db, $sql2);
-        $userID = mysqli_fetch_assoc($result2)['UserID'];
+        
         $empty_search = true;
 
     }
+
     $result = mysqli_query($db, $sql_query) or die("ABC");
+    $sql2 = "SELECT UserID from UserTable where UserEmail = '" . $_SESSION['login_email'] . "'";
+    $result2 = mysqli_query($db, $sql2);
+    $userID = mysqli_fetch_assoc($result2)['UserID'];
     
     if ($result->num_rows > 0) {
 
@@ -30,6 +32,7 @@
 
                 $row['Liked'] = false;
                 $add = false;
+                $row['Added'] = true;
 
                 $songID = $row['SongID'];
                 $sql_query = "SELECT SongID from LibraryTable where UserID = '" . $userID . "'";
@@ -65,6 +68,29 @@
                 }
 
             } else {
+
+                $songID = $row['SongID'];
+
+                $sql_query = "SELECT SongID from LibraryTable where UserID = '" . $userID . "'";
+                $bool = mysqli_query($db, $sql_query);
+                
+                if ($bool->num_rows > 0) {
+
+                    while ($res1 = mysqli_fetch_array($bool)) {
+
+                        if ($songID == $res1['SongID']) {
+                        $sql2 = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
+                        $result2 = mysqli_query($db, $sql2);        
+                        $row['SongArtist'] = mysqli_fetch_assoc($result2)['UserName'];
+                        $row['Added'] = true;
+
+                        }
+                    }
+
+                } else {
+                    $row['Added'] = false;
+                }
+
                 $row['Liked'] = false;
                 $sql2 = "Select UserName from UserTable where UserID = " . $row['SongArtist'] . "";
                 $result2 = mysqli_query($db, $sql2);        

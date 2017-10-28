@@ -38,6 +38,8 @@ $(document).ready(function() {
 
     likeHighlight(player.getCurrentSongObject())
 
+    addToLibrary(player.getCurrentSongObject())
+
     playPauseButton.onclick = function() { 
 
         play_or_pause()
@@ -102,6 +104,7 @@ $(document).ready(function() {
                 heading.innerText = player.currentSong()
                 icon.className = "glyphicon glyphicon-pause"
                 likeHighlight(element)
+                addToLibrary(element)
 
             }
 
@@ -202,4 +205,43 @@ function likeHighlight(element) {
             $(document.body).append(form)
             form.submit()
         }
+}
+
+function addToLibrary(element) {
+
+    console.log(element)
+    
+    var librarySpan = document.getElementById('library_span')
+
+    if (element.Added) {
+        librarySpan.className = "glyphicon glyphicon-ok"
+    } else {
+        librarySpan.className = "glyphicon glyphicon-plus-sign"
+    }
+
+    var addButton = document.getElementById('library_button')
+    addButton.onclick = function() {
+
+        element.Added = !element.Added
+
+        var form = $('<form></form>')
+        form.attr("method", "post")
+        form.attr("action", "Php/add_to_library.php")
+
+        var field = $('<input></input>')
+        field.attr("type", "hidden")
+        field.attr("name", "Added")
+        field.attr("value", element.Added.toString())
+
+        form.append(field)
+        var field = $('<input></input>')
+        field.attr("type", "hidden")
+        field.attr("name", "SongID")
+        field.attr("value", element.SongID)
+
+        form.append(field)
+
+        $(document.body).append(form)
+        form.submit()
+    }
 }

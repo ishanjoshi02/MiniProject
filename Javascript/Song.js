@@ -8,6 +8,7 @@ function Song(Song) {
     this.SongArtist = Song['SongArtist'];
     this.FilePath = Song['FilePath'];
     this.Liked = Song['Liked'];
+    this.Added = Song['Added']
 
     this.getFilePath = function() {
         return "Php/" + this.FilePath;
