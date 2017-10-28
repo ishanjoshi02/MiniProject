@@ -85,7 +85,7 @@
 
     </body>
 
-    <footer style="margin-left: 40px;position: fixed; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
+    <footer style="margin-left: 40px;position: fixed; height: 55px; width: 45%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
     
             <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center;">
                 
@@ -107,7 +107,12 @@
                         <span class="glyphicon glyphicon-forward"></span>
                     </button>
                 </div>
-            
+
+                <div style="float: right; width: 10%;">
+                    <button id="like_button" class="btn">
+                        <span class="glyphicon glyphicon-heart-empty"></span>
+                    </button>
+                </div>
                     <p id="song_title"></p>
             </div>
     

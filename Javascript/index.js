@@ -1,6 +1,7 @@
 var jsmediatags = window.jsmediatags
 var player
 var icon, heading
+var likeButton
 
 $(document).ready(function() {
 
@@ -29,7 +30,12 @@ $(document).ready(function() {
     player.initPlayer()
 
     var container = document.getElementById("container")
-    var playPauseButton = document.getElementById("play_pause_button")
+    var playPauseButton = document.getElementById("play_pause_button");
+    likeButton = document.getElementById("like_button");
+
+    likeButton.onclick = function() {
+        likeSong();
+    }
 
     icon = document.getElementById("play_pause_icon")
     heading = document.getElementById('song_title')
@@ -152,5 +158,21 @@ function playPreviousSong() {
     player.previous()
     heading.innerText = player.currentSong()
     icon.className = "glyphicon glyphicon-pause"
+    
+}
+
+function likeSong() {
+    // var i=1;
+    if(likeButton.className=="glyphicon glyphicon-heart") {
+        likeButton.className = "glyphicon glyphicon-heart-empty";
+        // i--;
+    }
+    else {
+        likeButton.className = "glyphicon glyphicon-heart"
+        // i++;
+    }
+    // likeButton.className = "glyphicon glyphicon-heart";
+    
+
     
 }

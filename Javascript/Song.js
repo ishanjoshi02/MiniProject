@@ -6,7 +6,7 @@ function Song(Song) {
     this.SongGenre = Song['SongGenre'];
     this.SongArtist = Song['SongArtist'];
     this.FilePath = Song['FilePath'];
-    this.Liked = Song['Liked']
+    this.Liked = Song['Liked'];
 
     this.getFilePath = function() {
         return "Php/" + this.FilePath;
@@ -24,6 +24,9 @@ function Song(Song) {
         return this.SongGenre;
     }
     this.getReleaseDate = function() {
-        return this.SongReleaseDate
+        return this.SongReleaseDate;
     }
+    // this.getLiked = function() {
+    //     return this.Liked;
+    // }
 }
