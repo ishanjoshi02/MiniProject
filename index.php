@@ -85,30 +85,36 @@
 
     </body>
 
-    <footer style=" align: center; margin-left: 40px;position: fixed; height: 55px; width: 45%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
+    <footer style=" align: center; margin-left: 40px;position: absolute; height: 55px; width: 50%; background-color: white-space; bottom: 0px; right: 0px; left: 300px; margin-bottom: 40px;" class="footer-player">
     
-            <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center;">
+            <div class="panel panel-default footer-player" style="margin: 0;background-color: #333; text-align: center; height: 80px;">
                 
     
-                <div style="float: left; width: 30%;">
+                <div style="float: left; width: 25%;">
                     <button id="prevButton" class="btn">
                         <span class="glyphicon glyphicon-backward"></span>
                     </button>
                 </div>
+
+                <div style="float: left; width: 10%; margin-top: 2%;">
+                    <button id="library_button" class="btn">
+                        <span id="library_span" class="glyphicon glyphicon-plus-sign"></span>
+                    </button>
+                </div>
     
-                <div style="float: left; width: 40%; margin-top: 2%;">
+                <div style="float: left; width: 30%; margin-top: 2%;">
                     <button id="play_pause_button" class="btn">
                         <span id="play_pause_icon" class="glyphicon glyphicon-play"></span>
                     </button>
                 </div>
     
-                <div style="float: right; width: 30%;">
+                <div style="float: right; width: 20%; margin-top: 0.5%;">
                     <button id="nextButton" class="btn">
                         <span class="glyphicon glyphicon-forward"></span>
                     </button>
                 </div>
 
-                <div style="float: right; width: 10%;">
+                <div style="float: right; width: 15%; margin-top: 2%;">
                     <button id="like_button" class="btn">
                         <span id="like_span" class="glyphicon glyphicon-heart-empty"></span>
                     </button>
