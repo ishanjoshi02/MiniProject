@@ -19,15 +19,14 @@
         
         <script type='text/javascript'>
             <?php
-
                 include("Php/includes/session.php");
                 include("Php/retrieve_songs.php");
-                // include("Php/search_songs.php");
-                $js_array = json_encode($results_array);
-                echo "var files = ".$js_array.";\n";
+                $js_array = json_encode($songs_array);
+                echo "var songList = ".$js_array.";\n";
             ?>
         </script>
         <script src="Javascript/Player.js"></script>
+        <script src="Javascript/Song.js"></script>
         <script src="Javascript/index.js"></script>
     </head>
     <body>

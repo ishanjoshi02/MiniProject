@@ -5,8 +5,6 @@ function Player(playlist) {
 
     this.audio
 
-    console.log(this.playlist)
-
     this.playing = false
 
 
@@ -32,8 +30,6 @@ function Player(playlist) {
         this.audio.play()
         this.playing = true
 
-        
-        console.log(this.audio)
     }
 
     this.next = function() {
