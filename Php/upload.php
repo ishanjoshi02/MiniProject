@@ -4,7 +4,7 @@
     include_once("includes/config.php");
     include_once("includes/extensions.php");
 
-    $target_dir = dirname(__FILE__) . "/music/";
+    $target_dir = "music/";
     $errors = array();
 
     if (!isset($_POST["inputSong"])) {
